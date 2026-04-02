@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Playfair+Display:ital,wght@0,300;1,300&display=swap');
+
+/* 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 0. 전체 배경 (데스크 바닥 느낌) */
+body {
+    background-color: #e0e0e0; /* 바닥 배경색 (자유롭게 변경 가능) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 잡지 종이(Sheet) 스타일 */
+.magazine-sheet {
+    background-color: #ffffff; /* 종이 색상 */
+    width: 100%;
+    max-width: 800px;
+    padding: 80px 60px;
+    
+    /* 종이가 바닥에 놓인 듯한 입체감(Shadow) */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.05);
+    border-radius: 2px;
+}
+
+/* 1. 타이포그래피 */
+#album-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+
+/* GROUP 2 */
+.artist-name {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+
+/* 타이틀 */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 7rem;
+    font-weight: 900;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 0.9;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* 다채로운 플레이리스트 */
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* 매거진 장식 선 */
+#album-header::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: #111;
+    margin: 40px auto 0;
+}
+
+/* TRACKLIST */
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 60px 0 30px;
+    text-align: center;
+    color: #222;
+}
+
+
+.highlights {
+    max-width: 50%;
+    justify-content: right;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+#charm-list {
+    list-style: none;
+    margin-bottom: 60px;
+}
+
+#charm-list li {
+    padding: 10px 0;
+    font-size: 0.95rem;
+    color: #555;
+    text-align: center;
+}
+
+/* 3. 테이블 스타일 */
+#track-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#track-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 15px;
+    border-bottom: 1px solid #111;
+    text-align: left;
+}
+
+#track-table td {
+    padding: 15px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* 4. 버튼 스타일 */
+#album-footer {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.listen-btn {
+    background: none;
+    border: 1px solid #111;
+    padding: 15px 40px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.listen-btn:hover {
+    background: #ff1493;
+    color: #fff;
+}
+
+.listen-btn:click {
+    
+}
+
+/* 3. Sulk highlights (좌측 정렬 및 이미지 배치) */
+.sulk {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/* Sulk highlights 제목 (h2) - 중앙 정렬로 유지하거나 왼쪽으로 옮길 수 있습니다 */
+.sulk h2 {
+    margin: 0 0 30px 0;
+    text-align: center; /* 제목은 중앙에 배치 */
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* 이미지와 가사를 담은 새로운 컨테이너 */
+.sulk-row {
+    display: flex; /* Flexbox로 가로 배치 */
+    justify-content: space-between; /* 이미지와 가사 사이를 벌림 */
+    align-items: flex-start; /* 상단 맞춤 */
+}
+
+/* 이미지 박스 (.sulk-image) - 좌측 */
+.sulk-image {
+    width: 45%; /* 종이 너비의 45% 사용 */
+    padding: 10px; /* 액자 효과를 위한 내부 여백 */
+    background-color: #fff; /* 흰색 액자 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 은은한 그림자 */
+}
+
+.sulk-image img {
+    width: 100%; /* 부모 div(.sulk-image) 너비에 꽉 맞춤 */
+    height: auto; /* 비율 유지 */
+    display: block; /* 하단 공백 제거 */
+}
+
+/* 가사 박스 (.highlights-box) - 우측 */
+.highlights-box {
+    width: 50%; /* 종이 너비의 50% 사용 */
+    text-align: left; /* 가사 텍스트 왼쪽 정렬 */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 2;
+    color: #444;
+    
+    /* 포인트를 주기 위한 왼쪽 세로 선 */
+    border-left: 3px solid #000;
+    padding-left: 25px;
+}
+
+.highlights-box p {
+    margin-bottom: 8px; /* 가사 줄끼리의 간격 */
+}
+
+.lrl {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.lrl h2 {
+    margin: 0 0 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* 가로 배치를 위한 컨테이너 */
+.lrl-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row-reverse; /* 핵심: 요소의 순서를 가로로 반전시킴 (글 좌측, 사진 우측) */
+}
+
+/* 이미지 박스 (.lrl-img) - 이제 우측에 위치 */
+.lrl-img {
+    width: 45%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.lrl-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 가사 박스 (.lrl-hightlight-box) - 이제 좌측에 위치 */
+.lrl-hightlight-box {
+    width: 50%;
+    text-align: right; /* 글자가 사진 쪽(오른쪽)을 향하도록 오른쪽 정렬 */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 2;
+    color: #444;
+    
+    /* 포인트를 주기 위한 오른쪽 세로 선 */
+    border-right: 3px solid #000;
+    padding-right: 25px;
+}
+
+.lrl-hightlight-box p {
+    margin-bottom: 8px;
+}
+
+/* 5. See You Again highlights (사진 좌측 배치) */
+.sy {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.sy h2 {
+    margin: 0 0 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.sy-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* 이미지 박스 (.sy-img) - 좌측 */
+.sy-img {
+    width: 45%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.sy-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 가사 박스 (.sy-highlight-box) - 우측 */
+.sy-highlight-box {
+    width: 50%;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 2;
+    color: #444;
+    
+    /* 좌측 세로 선 포인트 */
+    border-left: 3px solid #000;
+    padding-left: 25px;
+}
+
+.sy-highlight-box p {
+    margin-bottom: 8px;
+}
+
+/* 6. I Don't Think That I Like Her highlights (가사 좌측, 사진 우측) */
+.idt {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.idt h2 {
+    margin: 0 0 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.idt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row-reverse; /* 사진을 오른쪽으로 보냄 */
+}
+
+/* 이미지 박스 (.idt-img) - 우측 */
+.idt-img {
+    width: 45%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.idt-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 가사 박스 (.idt-highlight-box) - 좌측 */
+.idt-highlight-box {
+    width: 50%;
+    text-align: right; /* 글자가 우측 사진을 향하도록 정렬 */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 2;
+    color: #444;
+    
+    /* 우측 세로 선 포인트 */
+    border-right: 3px solid #000;
+    padding-right: 25px;
+}
+
+.idt-highlight-box p {
+    margin-bottom: 8px;
+}
+
+/* 7. Dangerously highlights (사진 좌측 배치) */
+.dg {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.dg h2 {
+    margin: 0 0 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.dg-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* 이미지 박스 (.dg-img) - 좌측 */
+.dg-img {
+    width: 45%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dg-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 가사 박스 (.dg-highlight-box) - 우측 */
+.dg-highlight-box {
+    width: 50%;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 2;
+    color: #444;
+    
+    /* 좌측 세로 선 포인트 */
+    border-left: 3px solid #000;
+    padding-left: 25px;
+}
+
+.dg-highlight-box p {
+    margin-bottom: 8px;
+}
+
+/* 8. Memories highlights (가사 좌측, 사진 우측) */
+.mem {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 120px; /* 마지막 섹션이라 여백을 조금 더 줌 */
+}
+
+.mem h2 {
+    margin: 0 0 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.mem-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row-reverse; /* 사진을 오른쪽으로 보냄 */
+}
+
+/* 이미지 박스 (.mem-img) - 우측 */
+.mem-img {
+    width: 45%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mem-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 가사 박스 (.mem-highlight-box) - 좌측 */
+.mem-highlight-box {
+    width: 50%;
+    text-align: right; /* 글자가 우측 사진을 향하도록 정렬 */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 2;
+    color: #444;
+    
+    /* 우측 세로 선 포인트 */
+    border-right: 3px solid #000;
+    padding-right: 25px;
+}
+
+.mem-highlight-box p {
+    margin-bottom: 8px;
+}
